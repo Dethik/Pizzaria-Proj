@@ -21,6 +21,14 @@ Pizza.prototype.changeSize = function(size) {
 	this.calculateTotal();
 }
 
+Pizza.prototype.sauce = function(sauce) {
+  if (sauce === true) {
+    this.sauce = sauce
+  } else {
+    this.sauce = undefined
+  }
+}
+
 Pizza.prototype.changeToppings = function(topping) {
   this.toppings.push(topping);
   this.toppingPrice++;
