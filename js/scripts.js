@@ -11,44 +11,39 @@ function Pizza() {
 // Size Check
 Pizza.prototype.changeSize = function(size) {
 	this.size = size;
-	if (this.size === "small") {
-		this.sizePrice = 12;
-	} else if (this.size === "medium") {
-		this.sizePrice = 18;
-	} else if (this.size === "large") {
-		this.sizePrice = 24;
+	if (this.size === "#small") {
+		this.sizePrice = '12'
+	} else if (this.size === "#medium") {
+		this.sizePrice = '18'
 	} else {
-    this.sizePrice = 0;
-  }
-	this.calculateTotal();
+		this.sizePrice = '24'
+	}
+  this.calculateTotal(size);
+  console.log(this.calculateTotal)
 }
 
 // Sauce Check
 Pizza.prototype.changeSauce = function(sauce) {
-  if (sauce) {
     this.sauce = sauce;
-  } else {
-    this.sauce = undefined;
-  }
 }
 
 // Topping Check
 Pizza.prototype.changeToppings = function(topping) {
-  this.toppings.push(topping);
+  this.toppings;
   this.toppingPrice++;
-  this.calculateTotal();
+  this.calculateTotal(topping);
 }
 
 // Price Total for checkout
 Pizza.prototype.calculateTotal = function() {
-  if (this.sizePrice > 0) {
-    this.totalPrice = this.sizePrice + this.toppingsPrice;
-  } else {
-    "That's-a not a pizza pie!";
-  }
+  this.totalPrice = this.sizePrice + this.toppingsPrice;
 }
 
 // - UI LOGIC - //
+
+Pizza.prototype.showCost = function() {
+  $("#output").append("$" + this.totalPrice + ".00");
+}
 
 $(document).ready(function() {
   let pizza = new Pizza();
@@ -64,7 +59,6 @@ $(document).ready(function() {
       $(".your-" + pizza.sauce).addClass("hidden");
     }
     let sauce = event.target.id;
-    $("#your-sauce").append("<button class='your-" + sauce + " " + sauce + "' id='" + sauce + "'>" + sauce + "</button>");
     $(".sauces").addClass("hidden");
     $(".toppings").removeClass("hidden");
     pizza.changeSauce(sauce === true);
@@ -72,10 +66,9 @@ $(document).ready(function() {
   $(".topping").click(function() {
     let topping = event.target.id;
     $("#" + topping).addClass("hidden");
-    $("#your-toppings").append("'" + topping + "'");
     pizza.changeToppings(topping);
   });
-  Pizza.prototype.showCost = function() {
-    $("#output").append("$" + this.totalPrice + ".00");
-  }
+  $("#show-pizza").click(function() {
+    pizza.showCost();
+  });
 });
