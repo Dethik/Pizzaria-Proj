@@ -7,26 +7,33 @@ function Pizza() {
   this.totalPrice = 0;
 }
 
-Pizza.prototype.priceCheck = function() {
-  //Take total from size and toppings and push to output
-}
-
-Pizza.prototype.toppingPrice = function() {
-  //Take in all toppings prices, add them up, and push tehm into priceCheck
-}
-
-Pizza.prototype.addSize = function(size) {
+Pizza.prototype.changeSize = function(size) {
 	this.size = size;
 	if (this.size === "small") {
 		this.sizePrice = 12;
 	} else if (this.size === "medium") {
 		this.sizePrice = 18;
-	} else {
+	} else if (this.size === "large") {
 		this.sizePrice = 24;
-	}
+	} else {
+    this.sizePrice = 0;
+  }
 	this.calculateTotal();
 }
 
+Pizza.prototype.changeToppings = function(topping) {
+  this.toppings.push(topping);
+  this.toppingPrice++;
+  this.calculateTotal();
+}
+
+Pizza.prototype.calculateTotal = function() {
+  this.totalPrice = this.sizePrice + this.toppingsPrice;
+}
+
+Pizza.prototype.priceCheck = function() {
+  //Take total from size and toppings and push to output
+}
 
 // - UI LOGIC - //
 
