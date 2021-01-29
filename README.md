@@ -39,3 +39,14 @@ Email: Thorgrim88@gmail.com
 
 ## Test Specs
 
+Describe: size()
+Test: Intake selection from user for size adjusting the price for the pizza accordingly.
+Expect()
+
+Describe: toppings()
+Test: Intake selections from user for any toppings they wish to have, adding them all together to give a total price for the pizza.
+Expect()
+
+Describe:
+Test: 
+Expect()
