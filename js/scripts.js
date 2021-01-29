@@ -26,9 +26,9 @@ Pizza.prototype.changeSize = function(size) {
 // Sauce Check
 Pizza.prototype.sauce = function(sauce) {
   if (sauce === true) {
-    this.sauce = sauce
+    this.sauce = sauce;
   } else {
-    this.sauce = undefined
+    this.sauce = undefined;
   }
 }
 
@@ -44,9 +44,10 @@ Pizza.prototype.calculateTotal = function() {
   if (this.sizePrice > 0) {
     this.totalPrice = this.sizePrice + this.toppingsPrice;
   } else {
-    "That's-a not a pizza pie!"
+    "That's-a not a pizza pie!";
   }
 }
+
 // - UI LOGIC - //
 
 $(document).ready(function() {
