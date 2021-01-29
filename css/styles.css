@@ -1,0 +1,72 @@
+small {
+	text-align: center;
+}
+button {
+	margin: 3px 0px 0px 0px;
+	text-align: center;
+	display: inline-block;
+}
+.round {
+	border-radius: 3rem;
+  box-shadow: 5px 4px 13px -2px rgba(0,0,0,0.47);
+}
+.smallPizza {
+	border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  background: #ffd867;
+  border: 10px solid #ffa600;
+  margin: 5px;
+  box-shadow: 5px 4px 13px -2px rgba(0,0,0,0.47);
+}
+.mediumPizza {
+  border-radius: 50%;
+  width: 115px;
+  height: 115px;
+  background: #ffd867;
+  border: 10px solid #ffa600;
+  margin: 5px;
+  box-shadow: 5px 4px 13px -2px rgba(0,0,0,0.47);
+}
+.largePizza {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background: #ffd867;
+  border: 10px solid #ffa600;
+  margin: 5px;
+  box-shadow: 5px 4px 13px -2px rgba(0,0,0,0.47);
+}
+.pomodoro {
+  border-radius: 0 0 90px 90px;
+  width: 150px;
+  height: 75px;
+  background: #b30000;
+  margin: 5px;
+  border: none;
+  line-height: 50%;
+  box-shadow: 5px 4px 13px -2px rgba(0,0,0,0.47);
+}
+.alfredo {
+  border-radius: 0 0 90px 90px;
+  width: 150px;
+  height: 75px;
+  background: #fff2e6;
+  margin: 5px;
+  border: none;
+  line-height: 50%;
+  box-shadow: 5px 4px 13px -2px rgba(0,0,0,0.47);
+}
+.userOrder {
+	text-align: center;
+}
+.menu {
+	text-align: center;
+}
+.form-group {
+  border-radius: 3rem;
+  font-size: 1em;
+}
+.topping {
+  box-shadow: 5px 4px 13px -2px rgba(0,0,0,0.47);
+}

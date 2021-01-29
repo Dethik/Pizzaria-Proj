@@ -24,8 +24,8 @@ Pizza.prototype.changeSize = function(size) {
 }
 
 // Sauce Check
-Pizza.prototype.sauce = function(sauce) {
-  if (sauce === true) {
+Pizza.prototype.changeSauce = function(sauce) {
+  if (sauce) {
     this.sauce = sauce;
   } else {
     this.sauce = undefined;
@@ -57,7 +57,7 @@ $(document).ready(function() {
     $(".crustSizes").addClass("hidden");
     $("#your-" + size).removeClass("hidden");
     $(".sauces").removeClass("hidden");
-    pizza.addSize(size);
+    pizza.changeSize(size);
   });
   $(".sauce").click(function() {
     if (pizza.sauce) {
@@ -67,6 +67,15 @@ $(document).ready(function() {
     $("#your-sauce").append("<button class='your-" + sauce + " " + sauce + "' id='" + sauce + "'>" + sauce + "</button>");
     $(".sauces").addClass("hidden");
     $(".toppings").removeClass("hidden");
-    pizza.addSauce(sauce);
+    pizza.changeSauce(sauce === true);
   });
+  $(".topping").click(function() {
+    let topping = event.target.id;
+    $("#" + topping).addClass("hidden");
+    $("#your-toppings").append("'" + topping + "'");
+    pizza.changeToppings(topping);
+  });
+  Pizza.prototype.showCost = function() {
+    $("#output").append("$" + this.totalPrice + ".00");
+  }
 });
