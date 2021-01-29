@@ -29,9 +29,10 @@ Pizza.prototype.changeSauce = function(sauce) {
 
 // Topping Check
 Pizza.prototype.changeToppings = function(topping) {
-  this.toppings;
+  this.toppings.push(topping);
   this.toppingPrice++;
-  this.calculateTotal(topping);
+  this.calculateTotal();
+  console.log(this.calculateTotal)
 }
 
 // Price Total for checkout
