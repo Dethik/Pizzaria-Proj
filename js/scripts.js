@@ -1,12 +1,14 @@
 // BUSINESS LOGIC //
 function Pizza() {
   this.size = undefined;
+  this.sauce = undefined;
   this.toppings = [];
   this.sizePrice = 0;
   this.toppingPrice = 0;
   this.totalPrice = 0;
 }
 
+// Size Check
 Pizza.prototype.changeSize = function(size) {
 	this.size = size;
 	if (this.size === "small") {
@@ -21,6 +23,7 @@ Pizza.prototype.changeSize = function(size) {
 	this.calculateTotal();
 }
 
+// Sauce Check
 Pizza.prototype.sauce = function(sauce) {
   if (sauce === true) {
     this.sauce = sauce
@@ -29,20 +32,21 @@ Pizza.prototype.sauce = function(sauce) {
   }
 }
 
+// Topping Check
 Pizza.prototype.changeToppings = function(topping) {
   this.toppings.push(topping);
   this.toppingPrice++;
   this.calculateTotal();
 }
 
+// Price Total for checkout
 Pizza.prototype.calculateTotal = function() {
-  this.totalPrice = this.sizePrice + this.toppingsPrice;
+  if (this.sizePrice > 0) {
+    this.totalPrice = this.sizePrice + this.toppingsPrice;
+  } else {
+    "That's-a not a pizza pie!"
+  }
 }
-
-Pizza.prototype.priceCheck = function() {
-  //Take total from size and toppings and push to output
-}
-
 // - UI LOGIC - //
 
 $(document).ready(function() {

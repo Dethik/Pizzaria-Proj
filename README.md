@@ -50,3 +50,7 @@ Expect()
 Describe: toppings()
 Test: Intake selections from user for any toppings they wish to have, adding them all together to give a total price for the pizza.
 Expect()
+
+Describe: sauce()
+Test: Detect if the user wishes to have sauce or not on their pizza.
+Expect()
