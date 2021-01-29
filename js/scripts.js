@@ -52,7 +52,21 @@ Pizza.prototype.calculateTotal = function() {
 
 $(document).ready(function() {
   let pizza = new Pizza();
-  $("#pizza-btn").submit(function(event) {
-    event.preventDefault();
+  $(".size").click(function() {
+    let size = event.target.id;
+    $(".crustSizes").addClass("hidden");
+    $("#your-" + size).removeClass("hidden");
+    $(".sauces").removeClass("hidden");
+    pizza.addSize(size);
+  });
+  $(".sauce").click(function() {
+    if (pizza.sauce) {
+      $(".your-" + pizza.sauce).addClass("hidden");
+    }
+    let sauce = event.target.id;
+    $("#your-sauce").append("<button class='your-" + sauce + " " + sauce + "' id='" + sauce + "'>" + sauce + "</button>");
+    $(".sauces").addClass("hidden");
+    $(".toppings").removeClass("hidden");
+    pizza.addSauce(sauce);
   });
 });
