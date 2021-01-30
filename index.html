@@ -8,49 +8,50 @@
   <Title>Pizza Parlor Project</Title>
 </head>
 <body>
-  <div class="container">
-    <div class="jumbotron">
-      <h1>Welcome to Zack's Pizza Parlor</h1>
+  <div class = "container">
+    <div class = "jumbotron">
+      <h1>Have a slice at Zack's Pizzaria</h1>
     </div>
-  </div>
-  <div class="container menu">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="container">
-          <h1>Pizza Options</h1>
-          <h4>Click items to add to your order</h4>
-          <hr>
-          <div class="container crustSizes">
-          <h3>Choose your pizza size:</h3>
-            <button class="smallPizza size" id="small">8"</button>
-            <button class="mediumPizza size" id="medium">14"</button>
-            <button class="largePizza size" id="large">18"</button>
-          </div>
-          <div class="container sauces hidden">
-            <h3>Choose your pizza sauce:</h3>
-            <br>
-            <button class="pomodoro sauce" id="pomodoro">Pomodoro</button>
-            <button class="alfredo sauce" id="alfredo">Alfredo</button>
-          </div>	
-        </div>
-        <div class="containter toppings hidden">
-          <button class="btn btn-danger topping" id="pepperoni" value="number">Pepperoni</button>
-          <button class="btn btn-danger topping" id="sausage" value="number">Sausage</button>
-          <button class="btn btn-danger topping" id="mushroom" value="number">Mushroom</button>
-          <button class="btn btn-danger topping" id="black-olives" value="number">Black Olives</button>
-          <button class="btn btn-danger topping" id="onion" value="number">Onion</button>
-          <button class="btn btn-danger topping" id="green-pepper" value="number">Green Pepper</button>
-          <button class="btn btn-danger topping" id="cheese" value="number">Mozzarella Cheese</button>
-        </div>
+    <img class = "pizzapic" src = "img/pizza.png" alt = "A photo of pizza logo">
+    <p class = "history">Come and try one of the best pizzas in town. All pizzas are made from homemade dough using <strong>only</strong> organic ingredients.</p>
+    <br>
+    <br>
+    <h3> What will be your order, today?</h3>
+    <form id = "pizzas">
+      <div class ="form-group">
+          <select class = "form-control" id = "size">
+            <option value ="small">Small: $8.00</option>
+            <option value ="mediam">Mediam: $10.00</option>
+            <option value = "large">Large: $12.00</option>
+            <option value= "family">Family: $16.00</option>
+          </select>
       </div>
-    </div>
-    <button class="btn btn-warning" id="show-pizza">Show me the cost of my pizza!</button>
-    <div class="col-md-6">
-      <h1>Your Pizza</h1>
-      <p>Total Cost: <span id="output"></span></p>
-      <div id="your-sauce"></div>
       <br>
-      <div id="your-toppings"></div>
+      <div class = "form-group">
+          <select class = "form-control" id = "meattoppings">
+            <option value = "pepperoni">Pepperoni: $3.00</option>
+            <option value = "ham">Ham: $ 1.75</option>
+            <option value = "bacon">Bacon: $2.25</option>
+            <option value= "canadian-bacon">Canadian Bacon: $3.00</option>
+            <option value = "no-meat">No Meat:$0.00</option>
+          </select>
+        </div>
+        <br>
+        <div class ="form-group">
+          <select class = "form-control" id = "veggietoppings">
+            <option value= "black-olives">Black-olives: $1.25</option>
+            <option value = "onion">Onion: $1.00</option>
+            <option value= "tomatoes">Tomatoes: $1.25</option>
+            <option value= "mushrooms">Mushrooms: $1.50</option>
+            <option value= "pineapple">Pineapple: $5.00</option>
+            <option value= "no-veggies">No-veggies: $0.00</option>
+          </select>
+      </div>
+      <br>
+      <button type ="submit" class = "btn-default">Pizza Order</button>
+      <h3> This is a confirmation of your pizza order!</h3>
+    </form>
+    <div id= "order">
     </div>
   </div>
 </body>
