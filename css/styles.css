@@ -1,6 +1,9 @@
 body {
   background-color: #ff99006b;
 }
+h3 {
+  padding: 15px;
+}
 .jumbotron {
   font-style: italic;
   color: 	#0a6302;

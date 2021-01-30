@@ -1,10 +1,10 @@
-function Pizza(pizzaSize, choice1, choice2) {
+function Pizza(pizzaSize, meats, vegis) {
   this.pizzaSize = pizzaSize;
-  this.choice1 = choice1;
-  this.choice2 = choice2;
+  this.meats = meats;
+  this.vegis = vegis;
   this.Cost = 0;
 };
-Pizza.prototype.calculate = function() {
+Pizza.prototype.priceCalc = function() {
   if (this.pizzaSize === "small") {
       this.Cost += 8;
   } else if (this.pizzaSize === "mediam") {
@@ -14,28 +14,28 @@ Pizza.prototype.calculate = function() {
   } else if (this.pizzaSize === "family") {
       this.Cost += 16;
   }
-  if (this.choice1 === "pepperoni") {
+  if (this.meats === "pepperoni") {
       this.Cost += 3;
-  } else if (this.choice1 === "ham") {
+  } else if (this.meats === "ham") {
       this.Cost += 1.75;
-  } else if (this.choice1 === "bacon") {
+  } else if (this.meats === "bacon") {
       this.Cost += 2.25;
-  } else if (this.choice1 === "canadian-bacon") {
+  } else if (this.meats === "canadian-bacon") {
       this.Cost += 3;
-  } else if (this.choice1 === "no-meat") {
+  } else {
       this.Cost += 0;
   }
-  if (this.choice2 === "black-olives") {
+  if (this.vegis === "black-olives") {
       this.Cost += 1.25;
-  } else if (this.choice2 === "onion") {
+  } else if (this.vegis === "onion") {
       this.Cost += 1;
-  } else if (this.choice2 === "tomatoes") {
+  } else if (this.vegis === "tomatoes") {
       this.Cost += 1.25;
-  } else if (this.choice2 === "mushrooms") {
+  } else if (this.vegis === "mushrooms") {
       this.Cost += 1.50;
-  } else if (this.choice2 === "pineapple") {
+  } else if (this.vegis === "pineapple") {
       this.Cost += 5.00;
-  } else if (this.choice2 === "no-veggies") {
+  } else {
       this.Cost += 0;
   }
   return this.Cost / 2;
@@ -47,7 +47,7 @@ $(document).ready(function() {
       let pizzatop1 = $("select#meattoppings").val();
       let pizzatop2 = $("select#veggietoppings").val();
       let TotalPizzaPrice = new Pizza(pizzasize, pizzatop1, pizzatop2);
-      TotalPizzaPrice.calculate();
-      $("#order").text("The final cost for your purchase today is $ " + TotalPizzaPrice.calculate() + "!");
+      TotalPizzaPrice.priceCalc();
+      $("#order").text("The final cost for your purchase today is $" + TotalPizzaPrice.priceCalc() + " !");
   });
 });

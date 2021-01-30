@@ -41,16 +41,12 @@ Email: Thorgrim88@gmail.com
 
 Describe: pizza()
 Test: Customize a pizza, from size to toppings, and be given a price accordingly.
-Expect()
+Expect(SizePrice+ToppingsPrice.toEqual(Total Price))
 
 Describe: size()
 Test: Intake selection from user for size adjusting the price for the pizza accordingly.
-Expect()
+Expect(Sizeofpizza.toEqual(Size Price))
 
 Describe: toppings()
 Test: Intake selections from user for any toppings they wish to have, adding them all together to give a total price for the pizza.
-Expect()
-
-Describe: sauce()
-Test: Detect if the user wishes to have sauce or not on their pizza.
-Expect()
+Expect(Meats+Veggies.toEqual(Toppings Price))
