@@ -21,7 +21,7 @@ In this a user will be able to order a pizza, choosing the size and toppings.
 ## Setup/Installation Requirements
 
 * Open Git Bash
-* Use command 'git pull https://github.com/Dethik/_'
+* Use command 'git pull https://github.com/Dethik/Pizzaria-Proj'
 * Navigate to top level of directory
 * Open index.html in your browser of choice.
 
