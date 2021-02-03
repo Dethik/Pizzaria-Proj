@@ -38,7 +38,6 @@ Pizza.prototype.priceCalc = function() {
   } else {
     this.Cost += 0;
   }
-return this.Cost;
 };
 $(document).ready(function() {
   $("form#pizzas").submit(function(event) {
@@ -47,6 +46,7 @@ $(document).ready(function() {
     let pizzatop1 = $("select#meattoppings").val();
     let pizzatop2 = $("select#veggietoppings").val();
     let TotalPizzaPrice = new Pizza(pizzasize, pizzatop1, pizzatop2);
-    $("#order").text("The final cost for your purchase today is $" + TotalPizzaPrice.priceCalc() + " !");
+    TotalPizzaPrice.priceCalc()
+    $("#order").text("The final cost for your purchase today is $" + TotalPizzaPrice.Cost + " !");
   });
 });
