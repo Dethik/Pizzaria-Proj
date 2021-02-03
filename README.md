@@ -40,13 +40,13 @@ Email: Thorgrim88@gmail.com
 ## Test Specs
 
 Describe: pizza()
-Test: Customize a pizza, from size to toppings, and be given a price accordingly.
-Expect(SizePrice+ToppingsPrice.toEqual(Total Price))
+Test: Customize a pizza, from size to toppings.
+Expect(new Pizza(1,2,3).toEqual('new Pizza constructor'))
 
 Describe: size()
 Test: Intake selection from user for size adjusting the price for the pizza accordingly.
-Expect(Sizeofpizza.toEqual(Size Price))
+Expect(new Pizza('small',2,2).pizzaSize).toEqual('small')
 
 Describe: toppings()
 Test: Intake selections from user for any toppings they wish to have, adding them all together to give a total price for the pizza.
-Expect(Meats+Veggies.toEqual(Toppings Price))
+Expect(new Pizza('large', 'pepperoni', 'onion').priceCalc()).toEqual(price))
